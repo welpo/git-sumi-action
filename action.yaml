@@ -24,4 +24,4 @@ runs:
         PR_TITLE: ${{ github.event.pull_request.title }}
       shell: bash
       run: |
-        git-sumi "${PR_TITLE}"
+        git-sumi -qf table "${PR_TITLE}" > "${GITHUB_STEP_SUMMARY}"
