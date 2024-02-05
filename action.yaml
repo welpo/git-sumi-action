@@ -14,10 +14,17 @@ runs:
       with:
         sparse-checkout: .  # Check out only repository root, where 'sumi.toml' is located.
 
-    - name: Install git-sumi
-      uses: baptiste0928/cargo-install@v3
-      with:
-        crate: git-sumi
+    - name: Download git-sumi binary
+      shell: bash
+      run: |
+        curl -L "https://github.com/welpo/git-sumi/releases/download/v0.0.6/git-sumi-x86_64-unknown-linux-gnu.tar.xz" -o git-sumi.tar.xz
+
+    - name: Extract and rename git-sumi binary
+      shell: bash
+      run: |
+        tar -xf git-sumi.tar.xz
+        mv git-sumi-x86_64-unknown-linux-gnu git-sumi
+        chmod +x git-sumi  # Make sure the binary is executable.
 
     - name: Run git-sumi
       env:
@@ -25,7 +32,7 @@ runs:
       shell: bash
       run: |
         export GIT_SUMI_QUIET=false
-        output=$(git-sumi -f table "${PR_TITLE}")
+        output=$(./git-sumi -f table "${PR_TITLE}")
         exit_code=$?
 
         if [ $exit_code -eq 0 ]; then
