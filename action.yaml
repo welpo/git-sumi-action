@@ -24,4 +24,17 @@ runs:
         PR_TITLE: ${{ github.event.pull_request.title }}
       shell: bash
       run: |
-        git-sumi -qf table "${PR_TITLE}" > "${GITHUB_STEP_SUMMARY}"
+        output=$(git-sumi -f table "${PR_TITLE}")
+        exit_code=$?
+
+        if [ $exit_code -eq 0 ]; then
+          # Command succeeded. Format the output.
+          content=$(echo "$output" | awk '/\| Key/,0' | head -n -1)
+          last_line=$(echo "$output" | tail -n 1)
+          {
+            echo "## git-sumi ✅"
+            echo "$content"  # This is the Markdown table.
+            echo ""
+            echo "$last_line"  # Summary.
+          } >> "${GITHUB_STEP_SUMMARY}"
+        fi
