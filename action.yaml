@@ -24,6 +24,7 @@ runs:
         PR_TITLE: ${{ github.event.pull_request.title }}
       shell: bash
       run: |
+        export GIT_SUMI_QUIET=false
         output=$(git-sumi -f table "${PR_TITLE}")
         exit_code=$?
 
