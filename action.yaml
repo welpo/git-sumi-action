@@ -33,7 +33,7 @@ runs:
           content=$(echo "$output" | awk '/\| Key/,0' | head -n -1)
           last_line=$(echo "$output" | tail -n 1)
           {
-            echo "## git-sumi ✅"
+            echo "## git-sumi"
             echo "$content"  # This is the Markdown table.
             echo ""
             echo "$last_line"  # Summary.
