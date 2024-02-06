@@ -2,7 +2,7 @@
     <a href="https://sumi.rs">
         <img src="https://raw.githubusercontent.com/welpo/git-sumi/main/website/static/img/logo.png" width="300" alt="git-sumi logo: a lantern held on a bamboo stick over the sea">
     </a>
-    <br>
+    <br><br>
     <a href="https://github.com/welpo/git-sumi-action/releases"><img src="https://img.shields.io/github/v/release/welpo/git-sumi-action?style=flat-square&labelColor=202b2d&color=b05275" alt="GitHub version"></a>
     <a href="https://sumi.rs/docs">
         <img src="https://img.shields.io/website?url=https%3A%2F%2Fsumi.rs&style=flat-square&label=docs&labelColor=202b2d&color=b05275" alt="Documentation"></a>
