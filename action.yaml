@@ -23,8 +23,8 @@ runs:
       shell: bash
       run: |
         tar -xf git-sumi.tar.xz
-        mv git-sumi-x86_64-unknown-linux-gnu git-sumi
-        chmod +x git-sumi  # Make sure the binary is executable.
+        mv git-sumi-x86_64-unknown-linux-gnu/git-sumi git-sumi
+        chmod +x git-sumi
 
     - name: Run git-sumi
       env:
