@@ -8,6 +8,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 ### ✨ Features
 
+- Install pre-compiled binary - ([b24a513](https://github.com/welpo/git-sumi-action/commit/b24a513203f0c54acb8292fdf7d40d9923644cdd))
 - Improve summary format - ([6799437](https://github.com/welpo/git-sumi-action/commit/6799437971d36cf5897694d2262dc799b326824a))
 
 ### 🐛 Bug fixes
@@ -18,6 +19,10 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 ### 📝 Documentation
 
 - *(README)* Add spacing below logo - ([328f35f](https://github.com/welpo/git-sumi-action/commit/328f35fdfee3ce38c06403a6f72ad714bf12cccc))
+
+### ♻️ Refactor
+
+- Remove checkmark from summary header - ([111baff](https://github.com/welpo/git-sumi-action/commit/111baff6f464217fc83e95f0e7419b0d56d06e3f))
 
 ### 🔧 Miscellaneous tasks
 
@@ -31,6 +36,10 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 - Add markdown summary - ([d3c864d](https://github.com/welpo/git-sumi-action/commit/d3c864de8fd4d398159260252a8f39ce2a7087d7))
 - Initial commit - ([cc32032](https://github.com/welpo/git-sumi-action/commit/cc3203223fe8921197ae00b0621fc1671388bdb1))
+
+### ♻️ Refactor
+
+- Install git-sumi from cargo, not pypi - ([b3c3af4](https://github.com/welpo/git-sumi-action/commit/b3c3af4f91afd47e2fbe038503ba04934ce21b91))
 
 ### 🔧 Miscellaneous tasks
 
