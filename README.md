@@ -6,8 +6,8 @@
     <a href="https://github.com/welpo/git-sumi-action/releases"><img src="https://img.shields.io/github/v/release/welpo/git-sumi-action?style=flat-square&labelColor=202b2d&color=b05275" alt="GitHub version"></a>
     <a href="https://sumi.rs/docs">
         <img src="https://img.shields.io/website?url=https%3A%2F%2Fsumi.rs&style=flat-square&label=docs&labelColor=202b2d&color=b05275" alt="Documentation"></a>
-    <a href="#license">
-        <img src="https://img.shields.io/badge/license-MIT%20or%20Apache%202.0-0?style=flat-square&labelColor=202b2d&color=b05275" alt="MIT or Apache 2.0 License"></a>
+    <a href="https://github.com/welpo/git-sumi">
+      <img src="https://img.shields.io/badge/clean_commits-git--sumi-0?style=flat-square&labelColor=202b2d&color=b05275" alt="Clean commits"></a>
 </p>
 
 # 🏮 Run git-sumi Action
