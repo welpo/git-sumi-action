@@ -10,7 +10,7 @@ runs:
   using: "composite"
   steps:
     - name: Check out repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         sparse-checkout: .  # Check out only repository root, where 'sumi.toml' is located.
 
