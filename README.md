@@ -12,13 +12,23 @@
 
 # 🏮 Run git-sumi Action
 
-This GitHub action runs [git-**sumi**](https://sumi.rs) to validate a Pull Request title using the `sumi.toml` configuration set up in the root of your repository.
+This GitHub action runs [git-**sumi**](https://sumi.rs) to validate Pull Request titles or lint commit ranges using the `sumi.toml` configuration set up in the root of your repository.
+
+## Inputs
+
+| Input | Description | Default |
+|-------|-------------|---------|
+| `mode` | Lint mode: `pr-title` or `commits` | `pr-title` |
+| `from` | Start of revision range (exclusive). Only for `commits` mode. | `origin/<PR base branch>` |
+| `to` | End of revision range (inclusive). Only for `commits` mode. | `HEAD` |
 
 ## Usage
 
-1. Add a `sumi.toml` file to the root of your repository, enabling the rules you want to use (see the [configuration](https://sumi.rs/docs/configuration/) and [rules](https://sumi.rs/docs/rules/) documentation).
+Add a `sumi.toml` file to the root of your repository, enabling the rules you want to use (see the [configuration](https://sumi.rs/docs/configuration/) and [rules](https://sumi.rs/docs/rules/) documentation).
 
-2. In your repository, create the workflow file `.github/workflows/git-sumi.yaml` with the following content:
+### Linting PR titles
+
+Create the workflow file `.github/workflows/git-sumi.yaml`:
 
 ```yaml
 name: Lint pull request title
@@ -44,11 +54,47 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-This workflow will run on every pull request event, checking the title against the rules defined in `sumi.toml`.
+### Linting commits
 
-3. Commit and push the workflow file to your repository.
+To lint all commits in a pull request, set `mode: commits`:
 
-4. That's it! The action will run automatically on every pull request event. If the title doesn't meet the rules, the action will fail and the pull request will be marked as "failing".
+```yaml
+name: Lint commits
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - ready_for_review
+
+permissions:
+  pull-requests: read
+
+jobs:
+  main:
+    name: Run git-sumi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: welpo/git-sumi-action@main
+        with:
+          mode: commits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+By default, this lints all commits between `origin/<PR base branch>` and `HEAD`. You can override the range:
+
+```yaml
+      - uses: welpo/git-sumi-action@main
+        with:
+          mode: commits
+          from: origin/develop
+          to: HEAD
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ## Questions?
 
