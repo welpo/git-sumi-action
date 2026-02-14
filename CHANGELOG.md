@@ -4,11 +4,17 @@ Welcome to the changelog for git-sumi-action. This document aims to provide a co
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [0.3.0](https://github.com/welpo/git-sumi-action/compare/v0.2.0..v0.3.0) - 2026-02-14
+
+### ✨ Features
+
+- Add commits linting mode and update git-sumi to v0.3.0 ([1383e29](https://github.com/welpo/git-sumi-action/commit/1383e29f29539d59d5484c767820714151c87f9b))
+
 ## [0.2.0](https://github.com/welpo/git-sumi-action/compare/v0.1.0..v0.2.0) - 2025-08-31
 
 ### ✨ Features
 
-- Update git-sumi to 0.2.0 ([4b788ff](https://github.com/welpo/git-sumi-action/commit/4b788ff7dc2622e952add493512455740189c323))
+- Update git-sumi to 0.2.0 ([4b788ff](https://github.com/welpo/git-sumi-action/commit/4b788ff7dc2622e952add493512455740189c323)) by [@welpo](https://github.com/welpo)
 
 ## [0.1.0](https://github.com/welpo/git-sumi-action/compare/v0.0.9..v0.1.0) - 2025-07-05
 
@@ -27,7 +33,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 ### 👥 New contributors
 
-🫶 [@renovate](https://github.com/renovate)[bot] made their first contribution in [#3](https://github.com/welpo/git-sumi-action/pull/3)
+🫶 @renovate[bot] made their first contribution in [#3](https://github.com/welpo/git-sumi-action/pull/3)
 
 ## [0.0.9](https://github.com/welpo/git-sumi-action/compare/v0.0.6..v0.0.9) - 2024-05-08
 
