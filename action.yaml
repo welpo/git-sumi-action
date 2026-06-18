@@ -25,13 +25,13 @@ runs:
   steps:
     - name: Check out repository (sparse, for sumi.toml only)
       if: inputs.mode != 'commits'
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         sparse-checkout: .  # Check out only repository root, where 'sumi.toml' is located.
 
     - name: Check out repository (full history, for commit range)
       if: inputs.mode == 'commits'
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 0
 
